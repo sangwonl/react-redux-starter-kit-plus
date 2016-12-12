@@ -3,7 +3,7 @@ import {
   increment,
   doubleAsync,
   default as counterReducer
-} from 'routes/Counter/modules/counter'
+} from 'redux/modules/counter'
 
 describe('(Redux Module) Counter', () => {
   it('Should export a constant COUNTER_INCREMENT.', () => {
@@ -85,7 +85,7 @@ describe('(Redux Module) Counter', () => {
       return doubleAsync()(_dispatchSpy, _getStateSpy)
         .then(() => {
           _dispatchSpy.should.have.been.calledOnce
-          _getStateSpy.should.have.been.calledOnce
+          _getStateSpy.should.not.have.been.called
         })
     })
 
@@ -95,13 +95,13 @@ describe('(Redux Module) Counter', () => {
       return doubleAsync()(_dispatchSpy, _getStateSpy)
         .then(() => {
           _dispatchSpy.should.have.been.calledOnce
-          _getStateSpy.should.have.been.calledOnce
+          _getStateSpy.should.not.have.been.called
           expect(_globalState.counter).to.equal(4)
           return doubleAsync()(_dispatchSpy, _getStateSpy)
         })
         .then(() => {
           _dispatchSpy.should.have.been.calledTwice
-          _getStateSpy.should.have.been.calledTwice
+          _getStateSpy.should.not.have.been.called
           expect(_globalState.counter).to.equal(8)
         })
     })
