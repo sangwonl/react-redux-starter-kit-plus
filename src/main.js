@@ -4,6 +4,7 @@ import RedBox from 'redbox-react'
 import createStore from './store/createStore'
 import createRoute from './routes'
 import AppContainer from './containers/AppContainer'
+import Promise from 'promise-polyfill'
 
 // Store Instantiation
 const initialState = window.___INITIAL_STATE__
@@ -22,6 +23,11 @@ if (__DEV__) {
   if (window.__REDUX_DEVTOOLS_EXTENSION__) {
     window.__REDUX_DEVTOOLS_EXTENSION__.open()
   }
+}
+
+// Set polyfill Promise for old browsers such like IE8
+if (!window.Promise) {
+  window.Promise = Promise
 }
 
 // This code is excluded from production bundle
