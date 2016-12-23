@@ -19,10 +19,10 @@ export const receivePosts = (subreddit, json) => ({
   }
 })
 
-export const fetchPosts = subreddit => (dispatch, getState) => {
+export const fetchPosts = subreddit => async (dispatch, getState) => {
   dispatch(requestPosts(subreddit))
-  return redditsService.getPosts(subreddit)
-    .then(data => dispatch(receivePosts(subreddit, data)))
+  const res = await redditsService.getPosts(subreddit)
+  dispatch(receivePosts(subreddit, res.data))
 }
 
 // Reducer

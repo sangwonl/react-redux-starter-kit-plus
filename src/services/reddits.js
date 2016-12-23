@@ -1,9 +1,8 @@
-import fetch from 'isomorphic-fetch'
+import axios from 'axios'
 
 const redditHost = 'http://www.reddit.com'
 
 const getPosts = subreddit =>
-  fetch(`${redditHost}/r/${subreddit}.json`)
-    .then(response => response.json())
+  axios.get(`${redditHost}/r/${subreddit}.json`)
 
 export default { getPosts }
