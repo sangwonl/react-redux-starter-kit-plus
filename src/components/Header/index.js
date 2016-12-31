@@ -32,6 +32,10 @@ class Header extends React.Component {
         <Link to='/reddits' activeClassName='route--active'>
           Reddits
         </Link>
+        {' · '}
+        <Link to='/chart' activeClassName='route--active'>
+          Chart
+        </Link>
       </div>
     )
   }

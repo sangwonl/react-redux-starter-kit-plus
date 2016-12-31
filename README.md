@@ -9,7 +9,8 @@ This starter kit is based from [davezuko's react-redux-starter-kit](https://gith
 - introduce `yarn` instead of `npm`
 - `transform-async-to-generator` for async/await
 - use `axios` for http client
-- add `promis-polyfill` for IE8 support
+- add `promise-polyfill` for IE8 support
+- add chart example with `recharts` library
 
 # Install
 
