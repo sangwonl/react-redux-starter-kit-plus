@@ -1,5 +1,9 @@
 import React from 'react'
 import { IndexLink, Link } from 'react-router'
+
+import AppBar from 'material-ui/AppBar'
+import { Tabs, Tab } from 'material-ui'
+
 import './Header.scss'
 
 class Header extends React.Component {
@@ -20,22 +24,16 @@ class Header extends React.Component {
   render () {
     return (
       <div>
-        <h1>React Redux Starter Kit</h1>
-        <IndexLink to='/' activeClassName='route--active'>
-          Home
-        </IndexLink>
-        {' · '}
-        <Link to='/counter' activeClassName='route--active'>
-          Counter
-        </Link>
-        {' · '}
-        <Link to='/reddits' activeClassName='route--active'>
-          Reddits
-        </Link>
-        {' · '}
-        <Link to='/chart' activeClassName='route--active'>
-          Chart
-        </Link>
+        <AppBar
+          title='React Redux Starter Kit (Plus)'
+          iconClassNameRight='muidocs-icon-navigation-expand-more' />
+
+        <Tabs>
+          <Tab label='Home' containerElement={<Link to='/' />} />
+          <Tab label='Counter' containerElement={<Link to='/counter' />} />
+          <Tab label='Reddits' containerElement={<Link to='/reddits' />} />
+          <Tab label='Charts' containerElement={<Link to='/chart' />} />
+        </Tabs>
       </div>
     )
   }

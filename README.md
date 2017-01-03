@@ -11,6 +11,7 @@ This starter kit is based from [davezuko's react-redux-starter-kit](https://gith
 - use `axios` for http client
 - add `promise-polyfill` for IE8 support
 - add chart example with `recharts` library
+- add `material-ui` component
 
 # Install
 
