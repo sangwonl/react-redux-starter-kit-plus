@@ -1,5 +1,5 @@
 import React from 'react'
-import { IndexLink, Link } from 'react-router'
+import { Link } from 'react-router'
 
 import AppBar from 'material-ui/AppBar'
 import { Tabs, Tab } from 'material-ui'
