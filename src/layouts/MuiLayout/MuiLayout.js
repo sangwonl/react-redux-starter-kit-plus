@@ -2,22 +2,22 @@ import React from 'react'
 import Header from '../../components/Header'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
-import './CoreLayout.scss'
+import './MuiLayout.scss'
 import '../../styles/core.scss'
 
-const CoreLayout = ({ children }) => (
+const MuiLayout = ({ children }) => (
   <MuiThemeProvider>
-    <div className='core-layout'>
+    <div className='layout-wrap'>
       <Header />
-      <div className='core-layout-container'>
+      <div className='layout-container'>
         {children}
       </div>
     </div>
   </MuiThemeProvider>
 )
 
-CoreLayout.propTypes = {
+MuiLayout.propTypes = {
   children : React.PropTypes.element.isRequired
 }
 
-export default CoreLayout
+export default MuiLayout

@@ -12,6 +12,7 @@ This starter kit is based from [davezuko's react-redux-starter-kit](https://gith
 - add `promise-polyfill` for IE8 support
 - add chart example with `recharts` library
 - add `material-ui` component
+- add `semantic-ui` component
 
 # Install
 

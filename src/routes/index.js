@@ -1,4 +1,4 @@
-import CoreLayout from '../layouts/CoreLayout/CoreLayout'
+import SemanticLayout from '../layouts/SemanticLayout'
 import HomeRoute from './Home'
 import LoginRoute from './Login'
 import CounterRoute from './Counter'
@@ -9,7 +9,7 @@ import { authRequired } from '../services/auth'
 
 const createRoutes = store => ({
   path: '/',
-  component: CoreLayout,
+  component: SemanticLayout,
   indexRoute: HomeRoute,
   childRoutes: [
     LoginRoute(store),
