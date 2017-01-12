@@ -9,7 +9,7 @@ class HeadedContainer extends React.Component {
 
   static propTypes = {
     showHeader: PropTypes.bool,
-    children: PropTypes.element
+    children: PropTypes.arrayOf(PropTypes.element)
   }
 
   constructor (props) {

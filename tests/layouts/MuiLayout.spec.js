@@ -1,6 +1,6 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
-import CoreLayout from 'layouts/CoreLayout/CoreLayout'
+import MuiLayout from 'layouts/MuiLayout/MuiLayout'
 
 function shallowRender (component) {
   const renderer = TestUtils.createRenderer()
@@ -10,10 +10,10 @@ function shallowRender (component) {
 }
 
 function shallowRenderWithProps (props = {}) {
-  return shallowRender(<CoreLayout {...props} />)
+  return shallowRender(<MuiLayout {...props} />)
 }
 
-describe('(Layout) Core', function () {
+describe('(Layout) MuiLayout', function () {
   let _component
   let _props
   let _child
@@ -28,6 +28,7 @@ describe('(Layout) Core', function () {
   })
 
   it('Should render as a <div>.', function () {
-    expect(_component.type).to.equal('div')
+    expect(TestUtils.isElement(_component)).to.true
+    expect(_component.props.children.type).to.equal('div')
   })
 })

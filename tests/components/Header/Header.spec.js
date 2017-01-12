@@ -1,6 +1,7 @@
 import React from 'react'
-import { IndexLink, Link } from 'react-router'
 import { shallow } from 'enzyme'
+import { AppBar, Tab } from 'material-ui'
+import { Link } from 'react-router'
 import Header from 'components/Header'
 
 describe('(Component) Header', () => {
@@ -10,26 +11,24 @@ describe('(Component) Header', () => {
     _wrapper = shallow(<Header />)
   })
 
-  it('Renders a welcome message', () => {
-    const welcome = _wrapper.find('h1')
-    expect(welcome).to.exist
-    expect(welcome.text()).to.match(/React Redux Starter Kit/)
+  it('Renders an AppBar on header with welcome title', () => {
+    expect(_wrapper.contains(
+      <AppBar
+        title='React Redux Starter Kit (Plus)'
+        iconClassNameRight='muidocs-icon-navigation-expand-more' />
+    )).to.be.true
   })
 
   describe('Navigation links...', () => {
-    it('Should render a Link to Home route', () => {
+    it('Should render a Tab which has a Link to Home route', () => {
       expect(_wrapper.contains(
-        <IndexLink activeClassName='route--active' to='/'>
-          Home
-        </IndexLink>
+        <Tab label='Home' containerElement={<Link to='/' />} />
       )).to.be.true
     })
 
-    it('Should render a Link to Counter route', () => {
+    it('Should render a Tab which has a Link to Counter route', () => {
       expect(_wrapper.contains(
-        <Link activeClassName='route--active' to='/counter'>
-          Counter
-        </Link>
+        <Tab label='Counter' containerElement={<Link to='/counter' />} />
       )).to.be.true
     })
   })
