@@ -1,9 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import Header from '../../components/Header'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
+import injectTapEventPlugin from 'react-tap-event-plugin'
+
 import './MuiLayout.scss'
 import '../../styles/core.scss'
+
+injectTapEventPlugin()
 
 const MuiLayout = ({ children }) => (
   <MuiThemeProvider>
@@ -17,7 +23,7 @@ const MuiLayout = ({ children }) => (
 )
 
 MuiLayout.propTypes = {
-  children : React.PropTypes.element.isRequired
+  children : PropTypes.element.isRequired
 }
 
 export default MuiLayout

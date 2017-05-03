@@ -32,7 +32,7 @@ class Header extends React.Component {
           <Tab label='Home' containerElement={<Link to='/' />} />
           <Tab label='Counter' containerElement={<Link to='/counter' />} />
           <Tab label='Reddits' containerElement={<Link to='/reddits' />} />
-          <Tab label='Charts' containerElement={<Link to='/chart' />} />
+          <Tab label='Charts' containerElement={<Link to='/charts' />} />
         </Tabs>
       </div>
     )

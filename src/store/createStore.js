@@ -1,8 +1,10 @@
 import { applyMiddleware, compose, createStore } from 'redux'
-import thunk from 'redux-thunk'
 import { browserHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
+import thunk from 'redux-thunk'
+
 import { updateLocation } from './location'
-import makeRootReducer from './reducers'
+import makeRootReducer, { preloadActions } from './reducers'
 
 export default (initialState = {}) => {
   // Middleware Configuration
@@ -31,14 +33,20 @@ export default (initialState = {}) => {
   )
   store.asyncReducers = {}
 
+  // Keep redux router history
+  store.history = syncHistoryWithStore(browserHistory, store)
+
   // To unsubscribe, invoke `store.unsubscribeHistory()` anytime
-  store.unsubscribeHistory = browserHistory.listen(updateLocation(store))
+  store.unsubscribeHistory = store.history.listen(updateLocation(store))
 
   if (module.hot) {
     module.hot.accept('./reducers', () => {
       store.replaceReducer(makeRootReducer(store.asyncReducers))
     })
   }
+
+  // Preload state by dispatching actions
+  store.dispatch(preloadActions())
 
   return store
 }

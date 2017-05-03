@@ -1,8 +1,7 @@
-import React, { Component, PropTypes } from 'react'
-import { browserHistory, Router } from 'react-router'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { Router } from 'react-router'
 import { Provider } from 'react-redux'
-
-import 'semantic-ui-css/semantic.min.css'
 
 class AppContainer extends Component {
   static propTypes = {
@@ -19,7 +18,7 @@ class AppContainer extends Component {
     return (
       <Provider store={store}>
         <div style={{ height: '100%' }}>
-          <Router history={browserHistory}>
+          <Router history={store.history}>
             {routes}
           </Router>
         </div>

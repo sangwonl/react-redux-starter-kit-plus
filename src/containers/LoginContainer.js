@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
 import { login } from '../redux/modules/auth'
@@ -7,7 +8,7 @@ import LoginForm from '../components/Auth/LoginForm'
 
 class LoginContainer extends React.Component {
   static propTypes = {
-    login: React.PropTypes.func.isRequired
+    login: PropTypes.func.isRequired
   }
 
   componentWillMount () {

@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import RedBox from 'redbox-react'
-import createStore from './store/createStore'
-import createRoute from './routes'
-import AppContainer from './containers/AppContainer'
+import createStore from 'store/createStore'
+import AppRoutes from 'routes'
+import AppContainer from 'containers/AppContainer'
 import Promise from 'promise-polyfill'
 
 // Store Instantiation
@@ -14,8 +14,7 @@ const store = createStore(initialState)
 const MOUNT_NODE = document.getElementById('root')
 
 let render = () => {
-  const routes = createRoute(store)
-  ReactDOM.render(<AppContainer store={store} routes={routes} />, MOUNT_NODE)
+  ReactDOM.render(<AppContainer store={store} routes={AppRoutes} />, MOUNT_NODE)
 }
 
 // Developer Tools Setup

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { reduxForm } from 'redux-form'
 
 import {
@@ -24,9 +25,9 @@ const FieldGroup = props => (
 )
 
 FieldGroup.propTypes = {
-  id: React.PropTypes.string.isRequired,
-  label: React.PropTypes.string.isRequired,
-  help: React.PropTypes.string
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  help: PropTypes.string
 }
 
 const LoginForm = props => (
@@ -49,7 +50,7 @@ const LoginForm = props => (
 )
 
 LoginForm.propTypes = {
-  handleSubmit: React.PropTypes.func.isRequired
+  handleSubmit: PropTypes.func.isRequired
 }
 
 export default reduxForm({ form: 'login' })(LoginForm)

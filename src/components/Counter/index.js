@@ -1,13 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 class Counter extends React.Component {
   static defaultProps = {
   }
 
   static propTypes = {
-    counter : React.PropTypes.number.isRequired,
-    increment : React.PropTypes.func.isRequired,
-    doubleAsync : React.PropTypes.func.isRequired
+    counter : PropTypes.number.isRequired,
+    increment : PropTypes.func.isRequired,
+    doubleAsync : PropTypes.func.isRequired
   }
 
   // constructor (props) {

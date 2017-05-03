@@ -12,29 +12,41 @@ This starter kit is based from [davezuko's react-redux-starter-kit](https://gith
 - add `promise-polyfill` for IE8 support
 - add chart example with `recharts` library
 - add `material-ui` component
-- add `semantic-ui` component
+- change dynamic routes to static
+- upgrade react version 15.5.x
 
 # Install
 
 ### `redux-cli`
 ```
-npm install -g redux-cli
+yarn global add redux-cli
 ```
 
 ### node packages
 ```
-npm install
+yarn install
 ```
 
 ### redux devtools extension
 https://github.com/zalmoxisus/redux-devtools-extension
 
+# Lint
+```
+yarn lint
+```
+
 # Run (In Development)
 ```
-npm start
+yarn start
 ```
 
 # Test
 ```
-npm test
+yarn test
+```
+
+# Deployment
+```
+yarn deploy:dev
+yarn deploy:prod
 ```
